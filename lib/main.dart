@@ -9,8 +9,8 @@ void main() async{
 
 
   // Await the http get response, then decode the json-formatted response.
-  // var response = await http.get(Uri.parse('http://192.168.25.48:5000/Produto/Listar'));
-  // print(response);
+  var response = await http.get(Uri.parse('http://192.168.25.48:5000/Produto/Listar'));
+  print(response);
 
   var resposta = await http.post(url, body: {
     "id": '',
@@ -18,10 +18,10 @@ void main() async{
     "preço": '4.99',
   });
 
-  // print(response.statusCode);
-  // print(url);
-  var respostaConvertida = convert.jsonDecode(resposta.body) as List<dynamic>;
-  Map teste = convert.jsonDecode(respostaConvertida[0]);
-
+  print(response.statusCode);
   print(url);
+  // var respostaConvertida = convert.jsonDecode(resposta.body) as List<dynamic>;
+  // Map teste = convert.jsonDecode(respostaConvertida[0]);
+
+  // print(url);
 }
